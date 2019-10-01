@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t aniketan/multi-container -f ./client/ Dockerfile.dev ./client
+  - docker build -t aniketan/multi-container -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true aniketan/multi-container npm run test -- --coverage
